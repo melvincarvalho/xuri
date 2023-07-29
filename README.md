@@ -46,7 +46,7 @@ xuri:npm:<package> [args]
 xuri:file:<path> [args]
 ```
 
-### Method ssh
+### Method npub
 
 ```bash
 xuri:ssh:<path> [args]

@@ -1,0 +1,63 @@
+#!/bin/bash
+
+# Method npm
+function xuri_npm {
+  npx "$1" "${@:2}"
+}
+
+# Method file
+function xuri_file {
+  "$1" "${@:2}"
+}
+
+# Method npub
+function xuri_npub {
+  xnpub "$1" "${@:2}"
+}
+
+# Method ssh
+function xuri_ssh {
+  ssh "$1" "${@:2}"
+}
+
+# Method http
+function xuri_http {
+  http "$1"
+}
+
+# Method docker
+function xuri_docker {
+  docker "$1"
+}
+
+# Main script
+
+case "$1" in
+  npm)
+    shift
+    xuri_npm "$@"
+  ;;
+  file)
+    shift
+    xuri_file "$@"
+  ;;
+  npub)
+    shift
+    xuri_npub "$@"
+  ;;
+  ssh)
+    shift
+    xuri_ssh "$@"
+  ;;
+  http)
+    shift
+    xuri_http "$@"
+  ;;
+  docker)
+    shift
+    xuri_docker "$@"
+  ;;
+  *)
+    echo "Usage: $0 {npm|file|npub|ssh|http|docker} [args]"
+    exit 1
+esac
