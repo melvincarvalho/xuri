@@ -31,6 +31,35 @@ xuri, executable URIs
 - file (exectuable files)
 - ssh (executable remote files)
 - npub (exectuable nostr npubs)
+- cgi-bin (HTTP POST)
+- docker (deploy)
+
+### Method npm
+
+xuri:npm:<package> [args]
+
+### Method file
+
+xuri:file:<path> [args]
+
+### Method ssh
+
+xuri:ssh:<path> [args]
+
+
+### Method ssh
+
+xuri:npub:<npub> [args]
+
+
+### Method http
+
+xuri:http:<url> [POST]
+
+### Method docker
+
+xuri:docker:<dockerid> [args]
+
 
 ## License
 
