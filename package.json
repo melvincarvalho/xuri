@@ -1,6 +1,6 @@
 {
   "name": "xuri",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "xuri",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,5 @@
     "url": "https://github.com/melvincarvalho/xuri/issues"
   },
   "homepage": "https://github.com/melvincarvalho/xuri#readme",
-  "dependencies": {
-  }
+  "dependencies": {}
 }
