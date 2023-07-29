@@ -36,29 +36,41 @@ xuri, executable URIs
 
 ### Method npm
 
+```bash
 xuri:npm:<package> [args]
+```
 
 ### Method file
 
+```bash
 xuri:file:<path> [args]
+```
 
 ### Method ssh
 
+```bash
 xuri:ssh:<path> [args]
+```
 
 
 ### Method ssh
 
+```bash
 xuri:npub:<npub> [args]
+```
 
 
 ### Method http
 
+```bash
 xuri:http:<url> [POST]
+```
 
 ### Method docker
 
-xuri:docker:<dockerid> [args]
+```bash
+xuri:docker:<dockerid> 
+```
 
 
 ## License
