@@ -1,78 +1,81 @@
-
-
-<div align="center">  
-  <h1>xuri</h1>
-</div>
-
-<div align="center">  
-<i>xuri</i>
-</div>
-
----
-
-<div align="center">
-<h4>Documentation</h4>
-</div>
+<p align="center">
+  <h3 align="center">Xuri</h3>
+  <p align="center">
+    Your source for executable URIs!
+    <br />
+    <a href="https://github.com/melvincarvalho/xuri/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/melvincarvalho/xuri/issues">Request Feature</a>
+  </p>
+</p>
 
 ---
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/melvincarvalho/xuri/blob/gh-pages/LICENSE)
-[![npm](https://img.shields.io/npm/v/xuri)](https://npmjs.com/package/xuri)
-[![npm](https://img.shields.io/npm/dw/xuri.svg)](https://npmjs.com/package/xuri)
-[![Github Stars](https://img.shields.io/github/stars/melvincarvalho/xuri.svg)](https://github.com/melvincarvalho/xuri/)
+<p align="center">
+  <a href="https://github.com/melvincarvalho/xuri/blob/gh-pages/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license">
+  </a>
+  <a href="https://npmjs.com/package/xuri">
+    <img src="https://img.shields.io/npm/v/xuri" alt="npm">
+  </a>
+  <a href="https://npmjs.com/package/xuri">
+    <img src="https://img.shields.io/npm/dw/xuri.svg" alt="npm">
+  </a>
+  <a href="https://github.com/melvincarvalho/xuri/">
+    <img src="https://img.shields.io/github/stars/melvincarvalho/xuri.svg" alt="Github Stars">
+  </a>
+</p>
 
-## Introduction
+---
 
-xuri, executable URIs
+## 📝 Table of Contents
 
-## Methods
+- [About](#about)
+- [Methods](#methods)
+- [License](#license)
 
-- npx (nmp)
-- file (exectuable files)
-- ssh (executable remote files)
-- npub (exectuable nostr npubs)
-- cgi-bin (HTTP POST)
-- docker (deploy)
+## 🧐 About <a name = "about"></a>
 
-### Method npm
+**Xuri** is a tool that provides executable URIs. These are a few types of URIs you can execute:
+
+## 🛠️ Methods <a name = "methods"></a>
+
+### npm
 
 ```bash
 xuri:npm:<package> [args]
 ```
 
-### Method file
+### File
 
 ```bash
 xuri:file:<path> [args]
 ```
 
-### Method npub
+### ssh
 
 ```bash
 xuri:ssh:<path> [args]
 ```
 
-
-### Method ssh
+### npub
 
 ```bash
 xuri:npub:<npub> [args]
 ```
 
-
-### Method http
+### HTTP POST
 
 ```bash
 xuri:http:<url> [POST]
 ```
 
-### Method docker
+### Docker
 
 ```bash
 xuri:docker:<dockerid> 
 ```
 
+## ⚖️ License <a name = "license"></a>
 
-## License
-
-- MIT
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/melvincarvalho/xuri/blob/gh-pages/LICENSE) file for details.
