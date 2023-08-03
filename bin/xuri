@@ -3,13 +3,22 @@
 # Function to execute an npm package using npx
 # $1 is the package name, the rest of the arguments are passed to the package
 function xuri_npm {
-  npx "$1" "${@:2}"
+  if ! command -v npx &> /dev/null
+  then
+    echo "npx could not be found"
+    exit
+  fi
+  npx "$1" "${@:2}" || echo "Error executing npm package $1"
 }
 
 # Function to execute a file
 # $1 is the file path, the rest of the arguments are passed to the file
 function xuri_file {
-  "$1" "${@:2}"
+  if [ ! -f "$1" ]; then
+    echo "File $1 not found"
+    exit
+  fi
+  "$1" "${@:2}" || echo "Error executing file $1"
 }
 
 # Function to execute an npub command
@@ -21,7 +30,12 @@ function xuri_npub {
 # Function to execute an ssh command
 # $1 is the ssh command, the rest of the arguments are passed to the command
 function xuri_ssh {
-  ssh "$1" "${@:2}"
+  if ! command -v ssh &> /dev/null
+  then
+    echo "ssh could not be found"
+    exit
+  fi
+  ssh "$1" "${@:2}" || echo "Error executing ssh command $1"
 }
 
 # Function to execute an HTTP request
@@ -33,7 +47,12 @@ function xuri_http {
 # Function to execute a Docker command
 # $1 is the Docker command
 function xuri_docker {
-  docker "$1"
+  if ! command -v docker &> /dev/null
+  then
+    echo "docker could not be found"
+    exit
+  fi
+  docker "$1" || echo "Error executing Docker command $1"
 }
 
 # Main script
