@@ -1,37 +1,44 @@
 #!/bin/bash
 
-# Method npm
+# Function to execute an npm package using npx
+# $1 is the package name, the rest of the arguments are passed to the package
 function xuri_npm {
   npx "$1" "${@:2}"
 }
 
-# Method file
+# Function to execute a file
+# $1 is the file path, the rest of the arguments are passed to the file
 function xuri_file {
   "$1" "${@:2}"
 }
 
-# Method npub
+# Function to execute an npub command
+# $1 is the npub command, the rest of the arguments are passed to the command
 function xuri_npub {
   xnpub "$1" "${@:2}"
 }
 
-# Method ssh
+# Function to execute an ssh command
+# $1 is the ssh command, the rest of the arguments are passed to the command
 function xuri_ssh {
   ssh "$1" "${@:2}"
 }
 
-# Method http
+# Function to execute an HTTP request
+# $1 is the URL for the HTTP request
 function xuri_http {
   http "$1"
 }
 
-# Method docker
+# Function to execute a Docker command
+# $1 is the Docker command
 function xuri_docker {
   docker "$1"
 }
 
 # Main script
-
+# Depending on the first argument, calls the corresponding function
+# If the first argument doesn't match any of the known commands, prints a usage message and exits
 case "$1" in
   npm)
     shift
