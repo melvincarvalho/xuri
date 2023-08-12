@@ -56,31 +56,62 @@ function xuri_docker {
 }
 
 # Main script
+# Check if the first argument starts with "xuri:"
+if [[ "$1" == xuri:* ]]; then
+  # Strip off the "xuri:" prefix
+  set -- "${1#xuri:}" "${@:2}"
+fi
+
+
 # Depending on the first argument, calls the corresponding function
 # If the first argument doesn't match any of the known commands, prints a usage message and exits
 case "$1" in
-  npm)
-    shift
+  npm|npm:*)
+    if [[ "$1" == npm:* ]]; then
+      set -- "${1#npm:}" "${@:2}"
+    else
+      shift
+    fi
     xuri_npm "$@"
   ;;
-  file)
-    shift
+  file|file:*)
+    if [[ "$1" == file:* ]]; then
+      set -- "${1#file:}" "${@:2}"
+    else
+      shift
+    fi
     xuri_file "$@"
   ;;
-  npub)
-    shift
+  npub|npub:*)
+    if [[ "$1" == npub:* ]]; then
+      set -- "${1#npub:}" "${@:2}"
+    else
+      shift
+    fi
     xuri_npub "$@"
   ;;
-  ssh)
-    shift
+  ssh|ssh:*)
+    if [[ "$1" == ssh:* ]]; then
+      set -- "${1#ssh:}" "${@:2}"
+    else
+      shift
+    fi
     xuri_ssh "$@"
   ;;
-  http)
-    shift
+  http|http:*)
+    if [[ "$1" == http:* ]]; then
+      set -- "${1#http:}" "${@:2}"
+    else
+      shift
+    fi
     xuri_http "$@"
   ;;
-  docker)
-    shift
+  docker|docker:*)
+    if [[ "$1" == docker:* ]]; then
+      set -- "${1#docker:}" "${@:2}"
+    else
+      shift
+    fi
     xuri_docker "$@"
   ;;
   *)
